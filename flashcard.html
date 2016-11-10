@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="flashcard" >
+<head>
+  <meta charset="utf-8">
+  <title>FlashCard</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="flash_index.css">
+  <script src="controller.js"></script>
+</head>
+<body >
+	<div ng-repeat="question in filteredQuestions" class="col-md-9" ng-controller="flashcardControl">
+		<div class="flip">
+			<div class="flipped card" ng-class="{'flipped':isFlipped}" ng-click="isFlipped=!isFlipped">
+				<div class="face front">
+					<p class="flashcard-wrap">{{question.Question}}</p>
+				</div>
+				<div class="face back">
+					<p class="flashcard-wrap">{{question.Question}}</p>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</body>
+</html>

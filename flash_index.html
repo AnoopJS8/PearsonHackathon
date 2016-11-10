@@ -3,17 +3,31 @@
 <head>
   <meta charset="utf-8">
   <title>FlashCard</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="flash_index.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="controller.js"></script>
+  
 </head>
 <body>
 <div ng-app="flashcardApp" ng-controller="flashcardController">
   <div class="pad">
     <p>
-      <button type="button" class="btn btn-primary btn-lg btn-space">Create a Flashcard</button>  
+      <button type="button" class="btn btn-primary btn-lg btn-space" ng-click="addNewFlash(item)" >Create a Flashcard</button>
       <button type="button" class="btn btn-primary btn-lg btn-space">Find Flashcards</button>
-      <button type="button" class="btn btn-primary btn-lg btn-space">My Flashcards</button>
+      <button type="button" class="btn btn-primary btn-lg btn-space" ng-click="showAddFlashes(items)">My Flashcards</button>
+      <div  ng-repeat = "item in flashes">
+      <input type="text" ng-model="item.front" name="" placeholder="WORD" class=".space">
+      <br/>
+      <input type="text" ng-model="item.back" name="" placeholder="MEANING" >  
+      
+      </div>
+      <div  ng-if = "click">
+        <div ng-repeat="item in flashes">
+        {{item.front}}
+        {{item.back}}
+      </div>
+      
     </p>
   </div>
 </div>
